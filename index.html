@@ -1,0 +1,28 @@
+<h2>Sharma’s Shuddh Atta</h2>  
+<img src="atta.jpg" alt="Shuddh Atta" width="200">  
+
+<select id="size">  
+  <option value="1kg-59">1kg - ₹59</option>  
+  <option value="5kg-290">5kg - ₹250</option>  
+  <option value="10kg-499">10kg - ₹499</option>  
+</select>  
+
+<button onclick="orderNow()">Order Now (WhatsApp)</button>  
+
+<script>
+function orderNow() {
+    // Get selected option value
+    let selected = document.getElementById("size").value;  
+    let [size, price] = selected.split("-");  
+
+    // WhatsApp number
+    let phone = "+918770844428";  
+
+    // Create message
+    let message = `Hello sir, I want to order 1 pack of Shuddh Atta (${size}) at ₹${price}. Please confirm my order.`;  
+
+    // Open WhatsApp with message
+    let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;  
+    window.open(url, "_blank");  
+}
+</script>
